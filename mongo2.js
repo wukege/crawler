@@ -23,8 +23,8 @@
 
 
 const mongoose = require('mongoose');
-
-let db = mongoose.connect('mongodb://localhost/crawler');
+mongoose.Promise = global.Promise
+let db = mongoose.connect('mongodb://localhost/test2');
 
 db.connection.on('error', console.error.bind(console, '数据库连接失败：'));
 
@@ -42,7 +42,7 @@ db.connection.once('open', function() {
     });
 
     // 将该 Schema 发布为 Model
-    let PersonModel = mongoose.model('col_1', PersonSchema);
+    let PersonModel = mongoose.model('t1', PersonSchema);
 
     // 拿到了 Model 对象，就可以执行增删改查等操作了
     // 如果要执行查询，需要依赖 Model，当然 Entity 也是可以做到的
@@ -52,7 +52,7 @@ db.connection.once('open', function() {
 
     // 用 Model 创建 Entity
     let personEntity = new PersonModel({
-        name: 'Krouky',
+        name: 'Krouky1',
         password: '10086'
     });
 
