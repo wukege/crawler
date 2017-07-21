@@ -7,7 +7,7 @@ var PersonSchema = new mongoose.Schema({
 var PersonModel = mongoose.model("Person", PersonSchema);
 
 var PersonEntity = new PersonModel({
-    name: "kege",
+    name: "e",
     age: 20
 });
 
