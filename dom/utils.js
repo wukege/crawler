@@ -39,33 +39,33 @@
     }
     window['utils']['showNodeName'] = alertNodeName;
 
-    function addEvent(node,type,listener){
-         if(!(node = $(node))){
-             return false
+    function addEvent(node, type, listener) {
+        if (!(node = $(node))) {
+            return false
         }
-        if(node.addEventListener){
-            node.addEventListener(type,listener,false);
+        if (node.addEventListener) {
+            node.addEventListener(type, listener, false);
             return true;
-        }else if(node.attachEvent){
-           node.attachEvent('on'+type,listener);
-           return true;
+        } else if (node.attachEvent) {
+            node.attachEvent('on' + type, listener);
+            return true;
         }
         return false;
     }
     window['utils']['addEvent'] = addEvent;
     //注意使用removeEventListener只能移除外部函数
-    function removeEvent(node,type,listener){
-        if(!(node = $(node))){
-             return false
+    function removeEvent(node, type, listener) {
+        if (!(node = $(node))) {
+            return false
         }
-        if(node.removeEventListener){
-            node.removeEventListener(type,listener,false);
-             return true
-        }else if(node.adtachEvent){
-            node.adtachEvent('on'+type,listener)
-             return true
+        if (node.removeEventListener) {
+            node.removeEventListener(type, listener, false);
+            return true
+        } else if (node.adtachEvent) {
+            node.adtachEvent('on' + type, listener)
+            return true
         }
-        return false   
+        return false
     }
     window['utils']['removeEvent'] = removeEvent;
 
