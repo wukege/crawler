@@ -13,10 +13,27 @@ const Model = require('./crawler_model.js').Model
 // })
 
 async function crawler() {
-    
-    for(let i=0;i<=80;i+=20){
-    let url = 'https://movie.douban.com/j/search_subjects?type=movie&tag=%E7%83%AD%E9%97%A8&sort=recommend&page_limit=20&page_start='+i;
-        const res = await axios.get(url)
+    const res = await axios.get('https://movie.douban.com/j/search_subjects?type=movie&tag=%E7%83%AD%E9%97%A8&sort=recommend&page_limit=20&page_start=0')
+
+    if (res.data) {
+        const $ = cheerio.load(res.data)
+        // console.log($('.pl2 > a').text());
+        // $('.subject-item .info a').each((index, el) => {
+
+        //     // 用 Model 创建 Entity
+
+        //     const personEntity = new Model({
+        //         title: $(el).text().trim()
+        //     });
+
+        //     personEntity.save(function (err, result) {
+        //         if (err) {
+        //             console.log(err);
+        //         } else {
+        //             console.log(`${result} saved!`);
+        //         }
+        //     });
+        // })
         if (res.data) {
             const subs = res.data.subjects;
             for (let i = 0; i < subs.length; i++) {
@@ -35,10 +52,8 @@ async function crawler() {
             }
         }
     }
-    
+
 }
-
-
 
 crawler();
 
