@@ -30,3 +30,47 @@ Myconstructor.name = "Jeff";
 Myconstructor.alertName = function(){
     alert(this.name);
 }
+
+var ab = new Myconstructor;
+
+function a (){
+
+}
+var a = function (){
+    var a = 1
+    function b(){
+        console.log(a)
+    }
+}
+
+const let 
+
+
+{
+    let a = a ;
+    var b = b ;
+    const c = c;
+}
+
+
+
+// curry函数柯里化
+function add(value){
+   var helper = function(next){
+      value = typeof(value)==="undefined"?next:value+next;
+      return helper;
+   }
+   helper.valueOf = function(){
+     return value;
+   }
+   return helper
+}
+
+
+var b = {
+    naem:'aaa'
+}
+var a =function(){
+    console.log(this)
+};
+setTimeout(a.bind(b), 5000);
