@@ -1,0 +1,19 @@
+CREATE DATABASE ke;
+
+USE ke;
+
+CREATE TABLE dep(
+	id INT NOT NULL,
+	name   CHAR(20) NOT NULL,
+	age INT(10) DEFAULT '10',
+	PRIMARY KEY (id)
+);
+
+INSERT INTO dep(id,name,age) VALUES(0,'kege',18);
+
+使用 source s.sql;命令导入数据内容 （注：在sql文件所在位置使用source命令）;
+
+//更新数据
+update dep set age=21 where id=3;
+//查找id=3的数据
+select * from dep where id=3;
