@@ -1,0 +1,8 @@
+{
+  "name": "",
+  "version": "",
+  "dependencies": {
+    "js-base64": "^2.4.0",
+    "pako": "^1.0.6"
+  }
+}

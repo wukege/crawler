@@ -11,6 +11,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "js-base64": "^2.4.0",
     "mysql": "^2.14.1"
+  },
+  "devDependencies": {
+    "gzip-js": "^0.3.2"
   }
 }
