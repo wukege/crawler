@@ -1,0 +1,51 @@
+mongod --dbpath E:\MongoDB\db 启动数据库并指定数据库存储目录
+mongod --dbpath E:\MongoDB\db --port=27000 指定端口号连接
+使用mongo 命令连接数据库
+
+数据库配置
+在E:\MongoDB目录下建立一个文件"mongodb.conf"
+# 设置数据目录的路径
+dbpath = E:\MongoDB\db
+# 设置日志信息的文件路径
+logpath = E\MongoDB\log\mongodb.log
+# 打开日志输出操作
+logappend = true
+#在以后进行用户管理的时候使用它
+noauth = true
+#设置端口号
+port = 27001
+同时建立一个保存日志信息的文件log\mongodb.log
+
+查看数据库
+show databases; 或 show dbs;
+切换到admin数据库 
+use admin
+关闭数据库服务
+db.shutdownServer()
+使用配置文件的形式启动数据库
+mongod -f e:\MongoDB\mongodb.conf
+使用指定了端口号连接数据库
+mongo --port=27001
+
+二、基础操作
+1、使用mldn数据库
+use mldn 
+2、创建一个集合 emp
+db.createCollection('emp')
+3、创建集合dept并插入数据
+db.dept.insert({"deptno":10,"dname":"财务部","loc":“北京”})
+4、查看集合
+show collections
+5、查看表数据
+语法：db.集合名称.find({若干条件})
+db.dept.find()
+6、查看单独的一个文档信息
+db.dept.findOne()
+7、删除数据
+db.dept.remove()
+8、更新数据
+db.dept.updata()
+9、删除集合
+db.dept.drop()
+10、删除当前所在的数据库
+db.dropDatabase()
